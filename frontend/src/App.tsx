@@ -1,14 +1,4 @@
-import React from "react";
-
-import { createGlobalStyle } from "styled-components";
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-`;
+import { GlobalStyle } from "./components/index";
 
 function App() {
   return (
