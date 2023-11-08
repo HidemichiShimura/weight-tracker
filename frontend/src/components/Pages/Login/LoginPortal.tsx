@@ -17,6 +17,7 @@ export default function LoginPortal() {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginForm>({
+    mode: "onChange",
     resolver: zodResolver(validationSchema),
   });
 
