@@ -3,7 +3,10 @@ import { ReactNode } from "react";
 import { useForm } from "react-hook-form";
 
 import { EMAIL_INPUT_ATTRS, PASSWORD_INPUT_ATTRS } from "./constant";
-import { validationSchema } from "../../../utils/validationSchema";
+import {
+  validationSchema,
+  validationSchemaType,
+} from "../../../utils/validationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
@@ -14,22 +17,17 @@ import {
   ErrText,
 } from "./LoginPortal.styled";
 
-type LoginForm = {
-  email: string;
-  password: string;
-};
-
 export default function LoginPortal() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginForm>({
+  } = useForm<validationSchemaType>({
     mode: "onChange",
     resolver: zodResolver(validationSchema),
   });
 
-  const onSubmit = (data: LoginForm) => {
+  const onSubmit = (data: validationSchemaType) => {
     /* Here will be the logic of login authentication */
     console.log(data);
   };

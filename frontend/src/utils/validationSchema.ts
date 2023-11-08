@@ -22,3 +22,5 @@ export const validationSchema = z
       .regex(/[\w]/, errMsg.password.regex),
   })
   .required();
+
+export type validationSchemaType = z.infer<typeof validationSchema>;
