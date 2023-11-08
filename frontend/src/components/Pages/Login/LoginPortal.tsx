@@ -5,6 +5,13 @@ import { useForm } from "react-hook-form";
 import { EMAIL_INPUT_ATTRS, PASSWORD_INPUT_ATTRS } from "./constant";
 import { validationSchema } from "../../../utils/validationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Form,
+  InputContainer,
+  Button,
+  Input,
+  ErrText,
+} from "./LoginPortal.styled";
 
 type LoginForm = {
   email: string;
@@ -27,14 +34,18 @@ export default function LoginPortal() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <label>Email</label>
-      <input {...register("email")} {...EMAIL_INPUT_ATTRS} />
-      <p>{errors.email?.message as ReactNode}</p>
-      <label>Password</label>
-      <input {...register("password")} {...PASSWORD_INPUT_ATTRS} />
-      <p>{errors.password?.message as ReactNode}</p>
-      <button type="submit">Login</button>
-    </form>
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <InputContainer>
+        <label>Email</label>
+        <Input {...register("email")} {...EMAIL_INPUT_ATTRS} />
+        <ErrText>{errors.email?.message as ReactNode}</ErrText>
+      </InputContainer>
+      <InputContainer>
+        <label>Password</label>
+        <Input {...register("password")} {...PASSWORD_INPUT_ATTRS} />
+        <ErrText>{errors.password?.message as ReactNode}</ErrText>
+      </InputContainer>
+      <Button type="submit">Login</Button>
+    </Form>
   );
 }
