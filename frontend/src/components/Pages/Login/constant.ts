@@ -18,7 +18,3 @@ export const PASSWORD_INPUT_ATTRS: DetailedHTMLProps<
   autoComplete: "password",
   placeholder: "Password",
 };
-export const required = {
-  email: "Enter your email",
-  password: "Enter your password",
-};

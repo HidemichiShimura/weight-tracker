@@ -2,7 +2,9 @@ import { ReactNode } from "react";
 
 import { useForm } from "react-hook-form";
 
-import { EMAIL_INPUT_ATTRS, PASSWORD_INPUT_ATTRS, required } from "./constant";
+import { EMAIL_INPUT_ATTRS, PASSWORD_INPUT_ATTRS } from "./constant";
+import { validationSchema } from "../../../utils/validationSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 type LoginForm = {
   email: string;
@@ -14,7 +16,9 @@ export default function LoginPortal() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginForm>();
+  } = useForm<LoginForm>({
+    resolver: zodResolver(validationSchema),
+  });
 
   const onSubmit = (data: LoginForm) => {
     /* Here will be the logic of login authentication */
@@ -24,16 +28,11 @@ export default function LoginPortal() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <label>Email</label>
-      <input
-        {...register("email", { required: required.email })}
-        {...EMAIL_INPUT_ATTRS}
-      />
+      <input {...register("email")} {...EMAIL_INPUT_ATTRS} />
       <p>{errors.email?.message as ReactNode}</p>
       <label>Password</label>
-      <input
-        {...register("password", { required: required.password })}
-        {...PASSWORD_INPUT_ATTRS}
-      />
+      <input {...register("password")} {...PASSWORD_INPUT_ATTRS} />
+      <p>{errors.password?.message as ReactNode}</p>
       <button type="submit">Login</button>
     </form>
   );
