@@ -7,6 +7,7 @@ import { validationSchema } from "../../../utils/validationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
+  PortalTitle,
   InputContainer,
   Button,
   Input,
@@ -35,6 +36,7 @@ export default function LoginPortal() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
+      <PortalTitle>Login</PortalTitle>
       <InputContainer>
         <label>Email</label>
         <Input {...register("email")} {...EMAIL_INPUT_ATTRS} />

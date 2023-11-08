@@ -11,6 +11,10 @@ export const Form = styled.form`
   gap: var(--inbtwn-elem-padding);
 `;
 
+export const PortalTitle = styled.h2`
+  text-align: center;
+`;
+
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,6 +27,7 @@ export const Input = styled.input`
 
 export const ErrText = styled.p`
   color: var(--primary-red-color);
+  margin-top: 4px;
 `;
 
 export const Button = styled.button`

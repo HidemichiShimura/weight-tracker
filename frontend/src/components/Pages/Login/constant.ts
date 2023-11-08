@@ -9,6 +9,7 @@ export const EMAIL_INPUT_ATTRS: DetailedHTMLProps<
   autoComplete: "email",
   placeholder: "example@example.com",
 };
+
 export const PASSWORD_INPUT_ATTRS: DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
