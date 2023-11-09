@@ -20,6 +20,8 @@ export const InputContainer = styled.div`
   flex-direction: column;
 `;
 
+export const Label = styled.label``;
+
 export const Input = styled.input`
   padding: 8px;
   border: none;

@@ -12,6 +12,7 @@ import {
   Form,
   PortalTitle,
   InputContainer,
+  Label,
   Button,
   Input,
   ErrText,
@@ -45,9 +46,9 @@ export default function LoginPortal() {
 
         return (
           <InputContainer key={idx}>
-            <label>
+            <Label>
               {input.replace(input.charAt(0), input.charAt(0).toUpperCase())}
-            </label>
+            </Label>
             <Input {...register(input)} {...attrs} />
             <ErrText>{errMsg}</ErrText>
           </InputContainer>
