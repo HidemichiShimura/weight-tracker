@@ -19,3 +19,5 @@ export const PASSWORD_INPUT_ATTRS: DetailedHTMLProps<
   autoComplete: "password",
   placeholder: "Password",
 };
+
+export const INPUTS: ["email", "password"] = ["email", "password"];

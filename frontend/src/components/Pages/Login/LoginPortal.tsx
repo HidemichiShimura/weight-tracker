@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 import { useForm } from "react-hook-form";
 
-import { EMAIL_INPUT_ATTRS, PASSWORD_INPUT_ATTRS } from "./constant";
+import { EMAIL_INPUT_ATTRS, PASSWORD_INPUT_ATTRS, INPUTS } from "./constant";
 import {
   validationSchema,
   validationSchemaType,
@@ -35,16 +35,24 @@ export default function LoginPortal() {
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <PortalTitle>Login</PortalTitle>
-      <InputContainer>
-        <label>Email</label>
-        <Input {...register("email")} {...EMAIL_INPUT_ATTRS} />
-        <ErrText>{errors.email?.message as ReactNode}</ErrText>
-      </InputContainer>
-      <InputContainer>
-        <label>Password</label>
-        <Input {...register("password")} {...PASSWORD_INPUT_ATTRS} />
-        <ErrText>{errors.password?.message as ReactNode}</ErrText>
-      </InputContainer>
+      {INPUTS.map((input, idx) => {
+        const attrs =
+          input === "email" ? EMAIL_INPUT_ATTRS : PASSWORD_INPUT_ATTRS;
+        const errMsg =
+          input === "email"
+            ? (errors.email?.message as ReactNode)
+            : (errors.password?.message as ReactNode);
+
+        return (
+          <InputContainer key={idx}>
+            <label>
+              {input.replace(input.charAt(0), input.charAt(0).toUpperCase())}
+            </label>
+            <Input {...register(input)} {...attrs} />
+            <ErrText>{errMsg}</ErrText>
+          </InputContainer>
+        );
+      })}
       <Button type="submit">Login</Button>
     </Form>
   );
