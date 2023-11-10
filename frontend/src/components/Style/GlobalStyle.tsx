@@ -18,6 +18,8 @@ export const GlobalStyle = createGlobalStyle`
     --font-size-md: 18px;
     --font-size-lg: 20px;
     --font-size-xl: 22px;
+    --device-width-tablet: 780px;
+    --device-width-laptop: 1020px;
 ;
   }
 
