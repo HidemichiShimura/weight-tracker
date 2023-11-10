@@ -14,6 +14,12 @@ export const GlobalStyle = createGlobalStyle`
     radial-gradient(at 0% 100%, hsla(207, 74%, 79%, 1) 0px, transparent 50%);
     --inbtwn-elem-padding: 16px;
     --main-border-radius: 8px;
+    --font-size-sm: 16px;
+    --font-size-md: 18px;
+    --font-size-lg: 20px;
+    --font-size-xl: 22px;
+    --device-width-tablet: 780px;
+    --device-width-laptop: 1020px;
 ;
   }
 
@@ -21,5 +27,9 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+
+  body {
+    font-size: var(--font-size-sm);
   }
 `;
