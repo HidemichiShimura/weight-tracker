@@ -18,7 +18,7 @@ import {
   ErrText,
 } from "../../Style/Portal.styled";
 
-export default function LoginPortal() {
+export default function SignUpPortal() {
   const {
     register,
     handleSubmit,
@@ -35,7 +35,7 @@ export default function LoginPortal() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <PortalTitle>Login</PortalTitle>
+      <PortalTitle>SignUp</PortalTitle>
       {INPUTS.map((input, idx) => {
         const attrs =
           input === "email" ? EMAIL_INPUT_ATTRS : PASSWORD_INPUT_ATTRS;
@@ -54,7 +54,7 @@ export default function LoginPortal() {
           </InputContainer>
         );
       })}
-      <Button type="submit">Login</Button>
+      <Button type="submit">SignUp</Button>
     </Form>
   );
 }
