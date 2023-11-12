@@ -35,7 +35,7 @@ export default function SignUpPortal() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <PortalTitle>Signup</PortalTitle>
+      <PortalTitle>SignUp</PortalTitle>
       {INPUTS.map((input, idx) => {
         const attrs =
           input === "email" ? EMAIL_INPUT_ATTRS : PASSWORD_INPUT_ATTRS;
@@ -54,7 +54,7 @@ export default function SignUpPortal() {
           </InputContainer>
         );
       })}
-      <Button type="submit">Signup</Button>
+      <Button type="submit">SignUp</Button>
     </Form>
   );
 }
