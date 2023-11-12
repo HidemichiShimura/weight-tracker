@@ -16,7 +16,7 @@ import {
   Button,
   Input,
   ErrText,
-} from "./LoginPortal.styled";
+} from "../../Style/Portal.styled";
 
 export default function LoginPortal() {
   const {
