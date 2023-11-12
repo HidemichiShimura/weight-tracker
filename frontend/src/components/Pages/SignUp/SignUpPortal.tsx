@@ -2,11 +2,7 @@ import { ReactNode } from "react";
 
 import { useForm } from "react-hook-form";
 
-import {
-  EMAIL_INPUT_ATTRS,
-  PASSWORD_INPUT_ATTRS,
-  INPUTS,
-} from "../Login/constant";
+import { EMAIL_INPUT_ATTRS, PASSWORD_INPUT_ATTRS, INPUTS } from "../constant";
 import {
   validationSchema,
   validationSchemaType,
