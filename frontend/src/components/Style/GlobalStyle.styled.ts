@@ -29,5 +29,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-size: var(--font-size-sm);
+    color: var(--primary-white-color);
   }
 `;
