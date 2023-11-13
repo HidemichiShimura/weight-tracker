@@ -1,4 +1,5 @@
 export { GlobalStyle } from "./Style/GlobalStyle.styled";
+export { BlurContainer } from "./Style/BlurContainer.styled";
 
 export { default as LoginSignupLayout } from "./Layout/LoginSignupLayout";
 export { default as HomeLayout } from "./Layout/HomeLayout";
