@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { BlurContainer } from "../../index";
-import { DEVICE_WIDTH, FONT_SIZE } from "../../../utils/constants";
+import { APP, DEVICE_WIDTH, FONT_SIZE } from "../../../utils/constants";
 
 const StyledHeader = styled.header`
   height: 70px;
@@ -34,7 +34,7 @@ export default function Header() {
   return (
     <BlurContainer>
       <StyledHeader>
-        <AppTitle>Weight Tracker</AppTitle>
+        <AppTitle>{APP.name}</AppTitle>
         <LoginEmail>user@user.com</LoginEmail>
       </StyledHeader>
     </BlurContainer>

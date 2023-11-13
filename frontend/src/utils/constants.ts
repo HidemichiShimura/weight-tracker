@@ -1,3 +1,7 @@
+export const APP = {
+  name: "Weight Tracker",
+};
+
 // CSS
 export const DEVICE_WIDTH = {
   tablet: "780px",
