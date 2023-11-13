@@ -8,7 +8,6 @@ type WeightDataProps = {
 
 const Container = styled.div`
   padding: 10px;
-  border: 1px solid coral;
   display: flex;
   flex-direction: column;
   align-items: center;
