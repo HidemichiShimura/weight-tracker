@@ -7,3 +7,5 @@ export { default as HomeLayout } from "./Layout/HomeLayout";
 export { default as LoginPortal } from "./Pages/Login/LoginPortal";
 
 export { default as SignUpPortal } from "./Pages/SignUp/SignUpPortal";
+
+export { default as Header } from "./Pages/Home/Header";
