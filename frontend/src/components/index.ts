@@ -12,3 +12,4 @@ export { default as Header } from "./Pages/Home/Header";
 export { default as WeightData } from "./Pages/Home/WeightData";
 export { default as HistoryData } from "./Pages/Home/HistoryData/HistoryData";
 export { default as Toggle } from "./Pages/Home/common/Toggle";
+export { default as DataDisplay } from "./Pages/Home/DataDisplay";
