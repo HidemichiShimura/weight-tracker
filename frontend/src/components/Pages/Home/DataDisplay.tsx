@@ -33,8 +33,18 @@ export default function DataDisplay() {
     <BlurContainer>
       <Container>
         <ToggleContainer>
-          <Toggle isSelected={selected === "latest"}>Latest</Toggle>
-          <Toggle isSelected={selected === "history"}>History</Toggle>
+          <Toggle
+            isSelected={selected === "latest"}
+            onClick={() => setSelected("latest")}
+          >
+            Latest
+          </Toggle>
+          <Toggle
+            isSelected={selected === "history"}
+            onClick={() => setSelected("history")}
+          >
+            History
+          </Toggle>
         </ToggleContainer>
         {selected === "latest" ? (
           <WeightData data={LATEST_DATA} />

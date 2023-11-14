@@ -4,7 +4,11 @@ import styled from "styled-components";
 
 import { DEVICE_WIDTH, FONT_SIZE } from "../../../../utils/constants";
 
-type ToggleProps = { children?: ReactNode; isSelected: boolean };
+type ToggleProps = {
+  children: ReactNode;
+  isSelected: boolean;
+  onClick: () => void;
+};
 
 const StyledToggle = styled.div<ToggleProps>`
   padding: 10px 20px;
@@ -29,6 +33,10 @@ const StyledToggle = styled.div<ToggleProps>`
   }
 `;
 
-export default function Toggle({ children, isSelected }: ToggleProps) {
-  return <StyledToggle isSelected={isSelected}>{children}</StyledToggle>;
+export default function Toggle({ children, isSelected, onClick }: ToggleProps) {
+  return (
+    <StyledToggle isSelected={isSelected} onClick={onClick}>
+      {children}
+    </StyledToggle>
+  );
 }
