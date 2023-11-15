@@ -1,6 +1,6 @@
-const path = require("path");
+import path from "path";
 
-module.exports = {
+export default {
   webpack: {
     alias: {
       "@components": path.resolve(__dirname, "./src/components/index.ts"),
