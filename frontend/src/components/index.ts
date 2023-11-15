@@ -13,3 +13,5 @@ export { default as WeightData } from "./Pages/Home/WeightData";
 export { default as HistoryData } from "./Pages/Home/HistoryData/HistoryData";
 export { default as Toggle } from "./Pages/Home/common/Toggle";
 export { default as DataDisplay } from "./Pages/Home/DataDisplay";
+export { default as AddForm } from "./Pages/Home/Menu/AddForm/AddForm";
+export { default as ModForm } from "./Pages/Home/Menu/ModForm/ModForm";
