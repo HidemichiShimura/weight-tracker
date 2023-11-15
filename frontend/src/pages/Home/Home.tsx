@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { HomeLayout, Header, DataDisplay, Menu } from "../../components/index";
 
 const BlueMeshBg = styled.div`
   min-height: 100vh;
@@ -8,5 +9,13 @@ const BlueMeshBg = styled.div`
 `;
 
 export default function Home() {
-  return <BlueMeshBg></BlueMeshBg>;
+  return (
+    <BlueMeshBg>
+      <HomeLayout>
+        <Header />
+        <DataDisplay />
+        <Menu />
+      </HomeLayout>
+    </BlueMeshBg>
+  );
 }
