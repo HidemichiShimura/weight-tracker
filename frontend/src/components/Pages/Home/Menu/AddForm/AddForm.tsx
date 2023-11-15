@@ -8,24 +8,7 @@ import {
   Label,
   Button,
 } from "../common/Form.styled";
-
-export const WEIGHT_INPUT_ATTRS: DetailedHTMLProps<
-  InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
-> = {
-  type: "number",
-  name: "weight",
-  placeholder: "65",
-};
-
-export const DATE_INPUT_ATTRS: DetailedHTMLProps<
-  InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
-> = {
-  type: "date",
-  name: "date",
-  placeholder: "2023-11-16",
-};
+import { WEIGHT_INPUT_ATTRS, DATE_INPUT_ATTRS } from "../common/attribute";
 
 export default function AddForm() {
   return (
