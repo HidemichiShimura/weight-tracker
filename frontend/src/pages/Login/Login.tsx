@@ -1,4 +1,4 @@
-import { LoginSignupLayout, LoginPortal } from "../../components/index";
+import { LoginSignupLayout, LoginPortal } from "@components";
 
 export default function Login() {
   return (

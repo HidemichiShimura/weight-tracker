@@ -6,7 +6,7 @@ import { EMAIL_INPUT_ATTRS, PASSWORD_INPUT_ATTRS, INPUTS } from "../constant";
 import {
   validationSchema,
   validationSchemaType,
-} from "../../../utils/validationSchema";
+} from "@utils/validationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,

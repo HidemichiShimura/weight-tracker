@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 import styled from "styled-components";
 
-import { DEVICE_WIDTH } from "../../utils/constants";
+import { DEVICE_WIDTH } from "@utils/constants";
 
 const Container = styled.div`
   min-height: 100vh;

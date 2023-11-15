@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { DEVICE_WIDTH, FONT_SIZE } from "../../utils/constants";
+import { DEVICE_WIDTH, FONT_SIZE } from "@utils/constants";
 
 export const Form = styled.form`
   color: var(--primary-blue-color);

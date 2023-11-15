@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 import styled from "styled-components";
 
-import { DEVICE_WIDTH, FONT_SIZE } from "../../../../utils/constants";
+import { DEVICE_WIDTH, FONT_SIZE } from "@utils/constants";
 
 type ToggleProps = {
   children: ReactNode;

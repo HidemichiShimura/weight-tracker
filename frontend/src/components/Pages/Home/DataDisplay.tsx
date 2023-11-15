@@ -2,10 +2,7 @@ import { useState } from "react";
 
 import styled from "styled-components";
 
-import WeightData from "./WeightData";
-import Toggle from "./common/Toggle";
-import HistoryData from "./HistoryData/HistoryData";
-import { BlurContainer } from "../../Style/BlurContainer.styled";
+import { BlurContainer, Toggle, WeightData, HistoryData } from "@components";
 
 // These are mock weight data and to be replaced with the actual data later
 const LATEST_DATA = { weight: "62.5", date: "2023-11-23" };
