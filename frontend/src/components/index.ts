@@ -15,3 +15,4 @@ export { default as Toggle } from "./Pages/Home/common/Toggle";
 export { default as DataDisplay } from "./Pages/Home/DataDisplay";
 export { default as AddForm } from "./Pages/Home/Menu/AddForm/AddForm";
 export { default as ModForm } from "./Pages/Home/Menu/ModForm/ModForm";
+export { default as DelForm } from "./Pages/Home/Menu/DelForm/DelForm";
