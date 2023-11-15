@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { DEVICE_WIDTH, FONT_SIZE } from "../../../../utils/constants";
+import { DEVICE_WIDTH, FONT_SIZE } from "@utils/constants";
 
 export const Table = styled.table`
   border: 1px solid rgba(245, 245, 245, 0.2);

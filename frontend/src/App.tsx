@@ -5,7 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import { GlobalStyle } from "./components/index";
+import { GlobalStyle } from "@components";
 import { Login, SignUp, Home } from "./pages/index";
 
 function App() {

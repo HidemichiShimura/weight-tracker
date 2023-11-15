@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { BlurContainer } from "../../index";
-import { APP, DEVICE_WIDTH, FONT_SIZE } from "../../../utils/constants";
+import { BlurContainer } from "@components";
+import { APP, DEVICE_WIDTH, FONT_SIZE } from "@utils/constants";
 
 const StyledHeader = styled.header`
   height: 70px;
