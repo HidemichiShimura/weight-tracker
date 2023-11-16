@@ -1,5 +1,3 @@
-import { DetailedHTMLProps, InputHTMLAttributes } from "react";
-
 import {
   ErrText,
   Form,

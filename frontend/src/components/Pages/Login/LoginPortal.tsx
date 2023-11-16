@@ -4,9 +4,9 @@ import { useForm } from "react-hook-form";
 
 import { EMAIL_INPUT_ATTRS, PASSWORD_INPUT_ATTRS, INPUTS } from "../constant";
 import {
-  validationSchema,
-  validationSchemaType,
-} from "@utils/validationSchema";
+  EntryValidationSchema,
+  EntryValidationSchemaType,
+} from "@utils/EntryValidationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
@@ -23,12 +23,12 @@ export default function LoginPortal() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<validationSchemaType>({
+  } = useForm<EntryValidationSchemaType>({
     mode: "onChange",
-    resolver: zodResolver(validationSchema),
+    resolver: zodResolver(EntryValidationSchema),
   });
 
-  const onSubmit = (data: validationSchemaType) => {
+  const onSubmit = (data: EntryValidationSchemaType) => {
     /* Here will be the logic of login authentication */
     console.log(data);
   };
