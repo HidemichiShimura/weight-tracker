@@ -12,7 +12,7 @@ const errMsg = {
   },
 };
 
-export const validationSchema = z
+export const EntryValidationSchema = z
   .object({
     email: z.string().min(1, errMsg.email.min).email(errMsg.email.email),
     password: z
@@ -23,4 +23,4 @@ export const validationSchema = z
   })
   .required();
 
-export type validationSchemaType = z.infer<typeof validationSchema>;
+export type EntryValidationSchemaType = z.infer<typeof EntryValidationSchema>;
