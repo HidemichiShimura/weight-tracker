@@ -4,7 +4,6 @@ export const WEIGHT_INPUT_ATTRS: DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
 > = {
-  type: "number",
   name: "weight",
   placeholder: "65",
 };
