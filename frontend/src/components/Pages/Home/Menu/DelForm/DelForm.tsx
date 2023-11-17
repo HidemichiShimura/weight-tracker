@@ -14,6 +14,7 @@ import {
   DelValidationSchemaType,
 } from "@utils/CUDValidationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { deleteData } from "@utils/functions";
 
 export default function DelForm() {
   const {
@@ -25,9 +26,17 @@ export default function DelForm() {
     resolver: zodResolver(DelValidationSchema),
   });
 
-  const onSubmit = (data: DelValidationSchemaType) => {
+  const onSubmit = async (data: DelValidationSchemaType) => {
     /* Here will be the logic of the delete operation */
     console.log(data);
+
+    try {
+      const msg = await deleteData(data);
+
+      console.log(msg);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
