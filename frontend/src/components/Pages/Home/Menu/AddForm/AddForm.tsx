@@ -14,6 +14,7 @@ import {
   AddValidationSchemaType,
 } from "@utils/CUDValidationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { postData } from "@utils/functions";
 
 export default function AddForm() {
   const {
@@ -25,9 +26,17 @@ export default function AddForm() {
     resolver: zodResolver(AddValidationSchema),
   });
 
-  const onSubmit = (data: AddValidationSchemaType) => {
+  const onSubmit = async (data: AddValidationSchemaType) => {
     /* Here will be the logic of the create operation */
     console.log(data);
+
+    try {
+      const msg = await postData(data);
+
+      console.log(msg);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

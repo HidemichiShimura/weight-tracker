@@ -14,6 +14,7 @@ import {
   ModValidationSchemaType,
 } from "@utils/CUDValidationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { patchData } from "@utils/functions";
 
 export default function ModForm() {
   const {
@@ -25,9 +26,17 @@ export default function ModForm() {
     resolver: zodResolver(ModValidationSchema),
   });
 
-  const onSubmit = (data: ModValidationSchemaType) => {
+  const onSubmit = async (data: ModValidationSchemaType) => {
     /* Here will be the logic of the update operation */
     console.log(data);
+
+    try {
+      const msg = await patchData(data);
+
+      console.log(msg);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
