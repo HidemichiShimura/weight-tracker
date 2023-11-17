@@ -18,7 +18,8 @@
     "paths": {
       "@components": ["./src/components/index.ts"],
       "@pages": ["./src/Pages/index.ts"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@utils/functions": ["./src/utils/functions/index.ts"]
     }
   },
   "include": ["src"]
