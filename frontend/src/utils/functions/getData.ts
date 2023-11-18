@@ -2,13 +2,11 @@ import axios from "axios";
 import "dotenv/config";
 
 export default async function getData() {
-  let data;
-
   try {
-    data = await axios.get(process.env.URI as string);
+    const resData = await axios.get("http://localhost:80");
+
+    return resData.status === 200;
   } catch (err) {
     console.log(err);
   }
-
-  return data;
 }
