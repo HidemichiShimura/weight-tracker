@@ -1,35 +1,49 @@
 import { Router } from "express";
 import cors from "cors";
 
+import { DataModel } from "../models/Data";
+
 export const router = Router();
 
 router.use(cors());
 
-router.get("/", (req, res) => {
-  // Fetched DB data is supposed to be replaced here later
+router.get("/", async (req, res) => {
+  const allDBData = await DataModel.find({});
 
-  res.send();
+  try {
+    res.send(allDBData);
+  } catch (err) {
+    res.status(500).send();
+  }
 });
-router.post("/", (req, res) => {
-  // Register the passed data to DB here
-  // If the data was successfully saved, return text of success or text of failure if not
+router.post("/", async (req, res) => {
+  const data = new DataModel(req.body);
 
-  // This data is supposed to be passed to DB
-  const data = req.body;
-  res.send();
+  try {
+    await data.save();
+    res.send();
+  } catch (err) {
+    res.status(500).send(err);
+  }
 });
-router.patch("/:date/:weight", (req, res) => {
-  // Update the existing data with the passed data
-  // If the data was successfully updated, return text of success or text of failure if not
-  const data = req.params;
+router.patch("/:date/:weight", async (req, res) => {
+  try {
+    const filter = { date: req.params.date };
+    const update = { weight: req.params.weight };
 
-  // console.log(`PATCH received: ${req.body}`);
-  res.send();
+    await DataModel.findOneAndUpdate(filter, update);
+    res.send();
+  } catch (err) {
+    res.status(500).send();
+  }
 });
-router.delete("/:date", (req, res) => {
-  // Delete the existing data
-  // If the data was successfully deleted, return text of success or text of failure if not
-  const data = req.params;
+router.delete("/:date", async (req, res) => {
+  const condition = { date: req.params.date };
 
-  res.send();
+  try {
+    await DataModel.findOneAndDelete(condition);
+    res.send();
+  } catch (err) {
+    res.status(500).send();
+  }
 });
