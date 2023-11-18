@@ -28,10 +28,11 @@ export default function ModForm() {
 
   const onSubmit = async (data: ModValidationSchemaType) => {
     /* Here will be the logic of the update operation */
-    console.log(data);
-
     try {
-      const msg = await patchData(data);
+      const isModSucceeded = await patchData(data);
+      const msg = isModSucceeded
+        ? "Data update succeeded!"
+        : "Data update failed!";
 
       console.log(msg);
     } catch (err) {

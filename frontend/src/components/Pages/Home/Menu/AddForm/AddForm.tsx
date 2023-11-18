@@ -27,11 +27,11 @@ export default function AddForm() {
   });
 
   const onSubmit = async (data: AddValidationSchemaType) => {
-    /* Here will be the logic of the create operation */
-    console.log(data);
-
     try {
-      const msg = await postData(data);
+      const isAddSucceeded = await postData(data);
+      const msg = isAddSucceeded
+        ? "Data registration succeeded!"
+        : "Data registration failed!";
 
       console.log(msg);
     } catch (err) {

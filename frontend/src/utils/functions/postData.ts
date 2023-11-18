@@ -4,13 +4,11 @@ import "dotenv/config";
 import { AddValidationSchemaType } from "@utils/CUDValidationSchema";
 
 export default async function postData(data: AddValidationSchemaType) {
-  let msg;
-
   try {
-    msg = await axios.post(process.env.URI as string, data);
+    const resData = await axios.post("http://localhost:80", data);
+
+    return resData.status === 200;
   } catch (err) {
     console.log(err);
   }
-
-  return msg;
 }

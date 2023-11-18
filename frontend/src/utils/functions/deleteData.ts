@@ -3,13 +3,11 @@ import axios from "axios";
 import { DelValidationSchemaType } from "@utils/CUDValidationSchema";
 
 export default async function deleteData(data: DelValidationSchemaType) {
-  let msg;
-
   try {
-    msg = await axios.delete(process.env.URI as string, { data: data });
+    const resData = await axios.delete(`http://localhost:80/${data.date}`);
+
+    return resData.status === 200;
   } catch (err) {
     console.log(err);
   }
-
-  return msg;
 }
