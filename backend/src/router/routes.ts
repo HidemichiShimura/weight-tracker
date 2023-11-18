@@ -16,13 +16,15 @@ router.get("/", async (req, res) => {
     res.status(500).send();
   }
 });
-router.post("/", (req, res) => {
-  // Register the passed data to DB here
-  // If the data was successfully saved, return text of success or text of failure if not
+router.post("/", async (req, res) => {
+  const data = new DataModel(req.body);
 
-  // This data is supposed to be passed to DB
-  const data = req.body;
-  res.send();
+  try {
+    await data.save();
+    res.send();
+  } catch (err) {
+    res.status(500).send(err);
+  }
 });
 router.patch("/:date/:weight", (req, res) => {
   // Update the existing data with the passed data
