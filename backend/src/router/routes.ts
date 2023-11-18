@@ -37,10 +37,13 @@ router.patch("/:date/:weight", async (req, res) => {
     res.status(500).send();
   }
 });
-router.delete("/:date", (req, res) => {
-  // Delete the existing data
-  // If the data was successfully deleted, return text of success or text of failure if not
-  const data = req.params;
+router.delete("/:date", async (req, res) => {
+  const condition = { date: req.params.date };
 
-  res.send();
+  try {
+    await DataModel.findOneAndDelete(condition);
+    res.send();
+  } catch (err) {
+    res.status(500).send();
+  }
 });
