@@ -4,13 +4,6 @@ import { BlurContainer, Toggle, WeightData, HistoryData } from "@components";
 import { Container, ToggleContainer } from "./DataDisplay.styled";
 import { getData } from "@utils/functions";
 
-// These are mock weight data and to be replaced with the actual data later
-const DATA_LIST = [
-  { weight: "62.5", date: "2023-11-23" },
-  { weight: "62.5", date: "2023-11-23" },
-  { weight: "62.5", date: "2023-11-23" },
-];
-
 function getLatestData(dataList: Array<{ weight: number; date: Date }>) {
   let latestData = dataList[0] || {};
 
@@ -26,14 +19,17 @@ function getLatestData(dataList: Array<{ weight: number; date: Date }>) {
 export default function DataDisplay() {
   const [selected, setSelected] = useState("latest");
   const [latestData, setLatestData] = useState<any>({});
+  const [allData, setAllData] = useState<any>([{}]);
 
   useEffect(() => {
     const res = getData();
 
     res.then((dataList: any) => {
       const latestD = getLatestData(dataList);
+      const allD = dataList;
 
       setLatestData(latestD);
+      setAllData(allD);
     });
   }, []);
 
@@ -57,7 +53,7 @@ export default function DataDisplay() {
         {selected === "latest" ? (
           <WeightData data={latestData} />
         ) : (
-          <HistoryData dataList={DATA_LIST} />
+          <HistoryData dataList={allData} />
         )}
       </Container>
     </BlurContainer>
