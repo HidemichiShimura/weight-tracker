@@ -1,14 +1,20 @@
 import { Router } from "express";
 import cors from "cors";
 
+import { DataModel } from "../models/Data";
+
 export const router = Router();
 
 router.use(cors());
 
-router.get("/", (req, res) => {
-  // Fetched DB data is supposed to be replaced here later
+router.get("/", async (req, res) => {
+  const allDBData = await DataModel.find({});
 
-  res.send();
+  try {
+    res.send(allDBData);
+  } catch (err) {
+    res.status(500).send();
+  }
 });
 router.post("/", (req, res) => {
   // Register the passed data to DB here
