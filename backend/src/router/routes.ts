@@ -26,13 +26,16 @@ router.post("/", async (req, res) => {
     res.status(500).send(err);
   }
 });
-router.patch("/:date/:weight", (req, res) => {
-  // Update the existing data with the passed data
-  // If the data was successfully updated, return text of success or text of failure if not
-  const data = req.params;
+router.patch("/:date/:weight", async (req, res) => {
+  try {
+    const filter = { date: req.params.date };
+    const update = { weight: req.params.weight };
 
-  // console.log(`PATCH received: ${req.body}`);
-  res.send();
+    await DataModel.findOneAndUpdate(filter, update);
+    res.send();
+  } catch (err) {
+    res.status(500).send();
+  }
 });
 router.delete("/:date", (req, res) => {
   // Delete the existing data
