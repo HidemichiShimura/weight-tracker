@@ -5,8 +5,9 @@ export default async function getData() {
   try {
     const resData = await axios.get("http://localhost:80");
 
-    return resData.status === 200;
+    return resData.data;
   } catch (err) {
     console.log(err);
+    return;
   }
 }
