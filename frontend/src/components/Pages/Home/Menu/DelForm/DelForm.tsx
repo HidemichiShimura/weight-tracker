@@ -28,10 +28,11 @@ export default function DelForm() {
 
   const onSubmit = async (data: DelValidationSchemaType) => {
     /* Here will be the logic of the delete operation */
-    console.log(data);
-
     try {
-      const msg = await deleteData(data);
+      const isDelSuceeded = await deleteData(data);
+      const msg = isDelSuceeded
+        ? "Data deletion succeeded!"
+        : "Data deletion succeeded!";
 
       console.log(msg);
     } catch (err) {
