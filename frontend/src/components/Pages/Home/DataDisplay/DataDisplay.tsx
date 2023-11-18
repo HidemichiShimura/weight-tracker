@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 
-import styled from "styled-components";
-
 import { BlurContainer, Toggle, WeightData, HistoryData } from "@components";
+import { Container, ToggleContainer } from "./DataDisplay.styled";
 import { getData } from "@utils/functions";
 
 // These are mock weight data and to be replaced with the actual data later
@@ -11,17 +10,6 @@ const DATA_LIST = [
   { weight: "62.5", date: "2023-11-23" },
   { weight: "62.5", date: "2023-11-23" },
 ];
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 25px 50px;
-`;
-const ToggleContainer = styled.div`
-  display: flex;
-  justify-content: center;
-`;
 
 function getLatestData(dataList: Array<{ weight: number; date: Date }>) {
   let latestData = dataList[0] || {};
