@@ -13,10 +13,15 @@ router.options("*", (req, res) => {
     .send();
 });
 router.get("/", async (req, res) => {
-  const allDBData = await DataModel.find({});
+  // const allDBData = await DataModel.find({});
 
+  // try {
+  //   res.send(allDBData);
+  // } catch (err) {
+  //   res.status(500).send();
+  // }
   try {
-    res.send(allDBData);
+    res.status(200).send();
   } catch (err) {
     res.status(500).send();
   }
