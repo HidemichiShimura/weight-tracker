@@ -6,7 +6,7 @@ import { router } from "./router/routes";
 import cors from "cors";
 
 const corsOptions = {
-  origin: "*",
+  origin: process.env.FRONT,
   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
   credentials: true,
 };
