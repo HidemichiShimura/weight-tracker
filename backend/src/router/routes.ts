@@ -8,6 +8,8 @@ export const router = Router();
 router.use(
   cors({
     origin: [process.env.FRONT as string],
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+    credentials: true,
   })
 );
 
