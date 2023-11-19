@@ -5,7 +5,11 @@ import { DataModel } from "../models/Data";
 
 export const router = Router();
 
-router.use(cors());
+router.use(
+  cors({
+    origin: [process.env.FRONT as string],
+  })
+);
 
 router.get("/", async (req, res) => {
   const allDBData = await DataModel.find({});
