@@ -3,20 +3,9 @@ import "dotenv/config";
 import mongoose from "mongoose";
 
 import { router } from "./router/routes";
-import cors from "cors"; // add
 
 const app = express();
 
-// add
-const corsOptions = {
-  origin: process.env.FRONT as string,
-  methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
-  "Access-Control-Allow-Origin": "*",
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
-//
 app.use(express.json());
 app.use(router);
 
