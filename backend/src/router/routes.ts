@@ -11,6 +11,7 @@ const corsOptions = {
   credentials: true,
 };
 
+router.options("*", cors()); // add
 router.use(cors(corsOptions));
 
 router.get("/", async (req, res) => {
