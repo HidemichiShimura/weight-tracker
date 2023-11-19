@@ -1,15 +1,8 @@
 import { Router } from "express";
-// import cors from "cors";
 
 import { DataModel } from "../models/Data";
 
 export const router = Router();
-// const corsOptions = {
-//   origin: process.env.FRONT as string,
-//   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
-//   credentials: true,
-// };
-// router.use(cors(corsOptions));
 
 router.options("*", (req, res) => {
   res

@@ -3,9 +3,17 @@ import "dotenv/config";
 import mongoose from "mongoose";
 
 import { router } from "./router/routes";
+import cors from "cors";
+
+const corsOptions = {
+  origin: process.env.FRONT as string,
+  methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
+  credentials: true,
+};
 
 const app = express();
 
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(router);
 
