@@ -5,13 +5,13 @@ import { DataModel } from "../models/Data";
 
 export const router = Router();
 const corsOptions = {
-  origin: process.env.FRONT as string,
+  // origin: process.env.FRONT as string,
+  origin: "*",
   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
   "Access-Control-Allow-Origin": "*",
   credentials: true,
 };
 
-router.options("*", cors()); // add
 router.use(cors(corsOptions));
 
 router.get("/", async (req, res) => {
