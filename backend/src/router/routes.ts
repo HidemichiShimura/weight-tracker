@@ -5,8 +5,7 @@ import { DataModel } from "../models/Data";
 
 export const router = Router();
 const corsOptions = {
-  // origin: process.env.FRONT as string,
-  origin: "*",
+  origin: process.env.FRONT as string,
   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
   "Access-Control-Allow-Origin": "*",
   credentials: true,
@@ -14,6 +13,9 @@ const corsOptions = {
 
 router.use(cors(corsOptions));
 
+router.options("*", (req, res) => {
+  res.send();
+});
 router.get("/", async (req, res) => {
   const allDBData = await DataModel.find({});
 
