@@ -12,8 +12,10 @@ export const router = Router();
 // router.use(cors(corsOptions));
 
 router.options("/", (req, res) => {
-  res.set("Access-Control-Allow-Origin", process.env.FRONT as string);
-  res.set("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
+  res.set({
+    "Access-Control-Allow-Origin": process.env.FRONT as string,
+    // "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,OPTIONS",
+  });
   res.send();
 });
 router.get("/", async (req, res) => {
