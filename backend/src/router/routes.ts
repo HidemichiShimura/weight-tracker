@@ -1,24 +1,20 @@
 import { Router } from "express";
-import cors from "cors";
+// import cors from "cors";
 
 import { DataModel } from "../models/Data";
 
 export const router = Router();
-const corsOptions = {
-  origin: process.env.FRONT as string,
-  methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: process.env.FRONT as string,
+//   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
+//   credentials: true,
+// };
+// router.use(cors(corsOptions));
 
-router.use(cors(corsOptions));
-
-router.options("*", (req, res) => {
-  res
-    .set(
-      "Access-Control-Allow-Origin",
-      "https://weight-tracker-front.vercel.app"
-    )
-    .send();
+router.options("/", (req, res) => {
+  res.set("Access-Control-Allow-Origin", process.env.FRONT as string);
+  res.set("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
+  res.send();
 });
 router.get("/", async (req, res) => {
   const allDBData = await DataModel.find({});
