@@ -4,24 +4,11 @@ import { DataModel } from "../models/Data";
 
 export const router = Router();
 
-router.options("*", (req, res) => {
-  res
-    .set({
-      "Access-Control-Allow-Origin": process.env.FRONT as string,
-      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,OPTIONS",
-    })
-    .send();
-});
 router.get("/", async (req, res) => {
-  // const allDBData = await DataModel.find({});
+  const allDBData = await DataModel.find({});
 
-  // try {
-  //   res.send(allDBData);
-  // } catch (err) {
-  //   res.status(500).send();
-  // }
   try {
-    res.status(200).send({ name: "John Doe" });
+    res.send(allDBData);
   } catch (err) {
     res.status(500).send();
   }
