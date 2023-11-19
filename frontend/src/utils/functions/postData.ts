@@ -1,5 +1,4 @@
 import axios from "axios";
-import "dotenv/config";
 
 import { AddValidationSchemaType } from "@utils/CUDValidationSchema";
 
