@@ -11,6 +11,7 @@ export const FONT_SIZE = {
 export const COLOR = {
   blue: "#274c77",
   white: "#f5f5f5",
+  lightWhite: "rgba(245, 245, 245, 0.2)",
   red: "#d64929",
   bgBlueMesh:
     "radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%), radial-gradient(at 80% 50%, hsla(333, 0%, 97%, 1) 0px, transparent 50%), radial-gradient(at 0% 100%, hsla(207, 74%, 79%, 1) 0px, transparent 50%)",
