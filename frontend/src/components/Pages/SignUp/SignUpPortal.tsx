@@ -17,6 +17,7 @@ import {
   Input,
   ErrText,
 } from "../../Style/Portal.styled";
+import { BlurContainer } from "../../Style/BlurContainer.styled";
 
 export default function SignUpPortal() {
   const {
@@ -34,27 +35,29 @@ export default function SignUpPortal() {
   };
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
-      <PortalTitle>SignUp</PortalTitle>
-      {INPUTS.map((input, idx) => {
-        const attrs =
-          input === "email" ? EMAIL_INPUT_ATTRS : PASSWORD_INPUT_ATTRS;
-        const errMsg =
-          input === "email"
-            ? (errors.email?.message as ReactNode)
-            : (errors.password?.message as ReactNode);
+    <BlurContainer>
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <PortalTitle>SignUp</PortalTitle>
+        {INPUTS.map((input, idx) => {
+          const attrs =
+            input === "email" ? EMAIL_INPUT_ATTRS : PASSWORD_INPUT_ATTRS;
+          const errMsg =
+            input === "email"
+              ? (errors.email?.message as ReactNode)
+              : (errors.password?.message as ReactNode);
 
-        return (
-          <InputContainer key={idx}>
-            <Label>
-              {input.replace(input.charAt(0), input.charAt(0).toUpperCase())}
-            </Label>
-            <Input {...register(input)} {...attrs} />
-            <ErrText>{errMsg}</ErrText>
-          </InputContainer>
-        );
-      })}
-      <Button type="submit">SignUp</Button>
-    </Form>
+          return (
+            <InputContainer key={idx}>
+              <Label>
+                {input.replace(input.charAt(0), input.charAt(0).toUpperCase())}
+              </Label>
+              <Input {...register(input)} {...attrs} />
+              <ErrText>{errMsg}</ErrText>
+            </InputContainer>
+          );
+        })}
+        <Button type="submit">SignUp</Button>
+      </Form>
+    </BlurContainer>
   );
 }
