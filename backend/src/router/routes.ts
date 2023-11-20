@@ -3,7 +3,7 @@ import cors from "cors";
 
 import { DataModel } from "../models/Data";
 
-export const router = Router();
+const router = Router();
 
 router.use(cors());
 
@@ -47,3 +47,5 @@ router.delete("/:date", async (req, res) => {
     res.status(500).send();
   }
 });
+
+export default router;
