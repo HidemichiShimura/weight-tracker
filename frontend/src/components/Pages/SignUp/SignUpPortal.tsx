@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { useNavigate } from "react-router-dom"; // Used for temporary navigation to the home page
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -28,11 +29,11 @@ export default function SignUpPortal() {
     mode: "onChange",
     resolver: zodResolver(EntryValidationSchema),
   });
-
   const onSubmit = (data: EntryValidationSchemaType) => {
     /* Here will be the logic of login authentication */
     console.log(data);
   };
+  const navigate = useNavigate(); // Used for temporary navigation to the home page
 
   return (
     <BlurContainer>
@@ -56,7 +57,10 @@ export default function SignUpPortal() {
             </InputContainer>
           );
         })}
-        <Button type="submit">SignUp</Button>
+        {/* Temporary navigation to the home page */}
+        <Button type="submit" onClick={() => navigate("/Home")}>
+          SignUp
+        </Button>
       </Form>
     </BlurContainer>
   );
