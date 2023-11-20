@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-import { DEVICE_WIDTH, FONT_SIZE } from "@utils/constants";
+import { DEVICE_WIDTH, FONT_SIZE, COLOR } from "../../../../Style/constant";
 
 export const Table = styled.table`
-  border: 1px solid rgba(245, 245, 245, 0.2);
+  border: 1px solid ${COLOR.lightWhite};
   border-collapse: collapse;
 `;
 export const HeaderTr = styled.tr`
   font-size: ${FONT_SIZE.md};
-  color: var(--primary-white-color);
-  background-color: rgba(245, 245, 245, 0.2);
+  color: ${COLOR.white};
+  background-color: ${COLOR.lightWhite};
   border-collapse: collapse;
 
   @media (min-width: ${DEVICE_WIDTH.tablet}) {
@@ -33,7 +33,7 @@ export const Tr = styled.tr`
   }
 `;
 export const Td = styled.td`
-  border: 1px solid rgba(245, 245, 245, 0.2);
+  border: 1px solid ${COLOR.lightWhite};
   text-align: center;
   padding: 10px 20px;
 `;

@@ -1,16 +1,22 @@
 import styled from "styled-components";
 
-import { DEVICE_WIDTH, FONT_SIZE } from "@utils/constants";
+import {
+  BORDER_RADIUS,
+  COLOR,
+  DEVICE_WIDTH,
+  FONT_SIZE,
+  PADDING,
+} from "../Style/constant";
 
 export const Form = styled.form`
-  color: var(--primary-blue-color);
-  background-color: var(--primary-white-color);
-  border-radius: var(--main-border-radius);
+  color: ${COLOR.blue};
+  background-color: ${COLOR.white};
+  border-radius: ${BORDER_RADIUS.main};
   min-width: 300px;
-  padding: var(--inbtwn-elem-padding);
+  padding: ${PADDING.main};
   display: flex;
   flex-direction: column;
-  gap: var(--inbtwn-elem-padding);
+  gap: ${PADDING.main};
 `;
 
 export const PortalTitle = styled.p`
@@ -54,7 +60,7 @@ export const Input = styled.input`
 `;
 
 export const ErrText = styled.p`
-  color: var(--primary-red-color);
+  color: ${COLOR.red};
   margin-top: 4px;
 
   @media (min-width: ${DEVICE_WIDTH.tablet}) {
@@ -67,8 +73,8 @@ export const ErrText = styled.p`
 
 export const Button = styled.button`
   font-size: ${FONT_SIZE.sm};
-  color: var(--primary-white-color);
-  background-color: var(--primary-blue-color);
+  color: ${COLOR.white};
+  background-color: ${COLOR.blue};
   border: none;
   padding: 8px;
 

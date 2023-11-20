@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 import styled from "styled-components";
 
-import { DEVICE_WIDTH, FONT_SIZE } from "@utils/constants";
+import { DEVICE_WIDTH, FONT_SIZE, COLOR } from "../../../Style/constant";
 
 type ToggleProps = {
   children: ReactNode;
@@ -14,12 +14,9 @@ const StyledToggle = styled.div<ToggleProps>`
   padding: 10px 20px;
   font-size: ${FONT_SIZE.sm};
   border-bottom: 1px solid
-    ${(props) =>
-      props.isSelected
-        ? "var(--primary-white-color)"
-        : "rgba(245, 245, 245, 0.2)"};
+    ${(props) => (props.isSelected ? COLOR.white : COLOR.lightWhite)};
   background-color: transparent;
-  color: var(--primary-white-color);
+  color: ${COLOR.white};
   cursor: pointer;
   opacity: ${(props) => (props.isSelected ? 1 : 0.5)};
   transition: opacity, 0.5s;

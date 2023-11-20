@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+import { COLOR, FONT_SIZE } from "./constant";
+
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -8,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-size: var(--font-size-sm);
-    color: var(--primary-white-color);
+    font-size: ${FONT_SIZE.sm};
+    color: ${COLOR.white};
   }
 `;
