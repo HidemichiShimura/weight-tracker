@@ -17,14 +17,14 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(router);
 
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running at PORT:${process.env.PORT}`);
+});
+
 mongoose
   .connect(process.env.URL as string)
   .then(() => {
     console.log("Connected to database");
-
-    app.listen(process.env.PORT, () => {
-      console.log(`Server is running at PORT:${process.env.PORT}`);
-    });
   })
   .catch((err) => console.log(err));
 
