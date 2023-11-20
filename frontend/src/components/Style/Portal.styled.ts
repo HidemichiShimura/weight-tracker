@@ -9,8 +9,7 @@ import {
 } from "../Style/constant";
 
 export const Form = styled.form`
-  color: ${COLOR.blue};
-  background-color: ${COLOR.white};
+  color: ${COLOR.white};
   border-radius: ${BORDER_RADIUS.main};
   min-width: 300px;
   padding: ${PADDING.main};
@@ -49,7 +48,9 @@ export const Label = styled.label`
 export const Input = styled.input`
   font-size: ${FONT_SIZE.sm};
   padding: 8px;
-  border: none;
+  color: ${COLOR.white};
+  background: transparent;
+  border: 1px solid ${COLOR.lightWhite};
 
   @media (min-width: ${DEVICE_WIDTH.tablet}) {
     font-size: ${FONT_SIZE.md};
@@ -74,9 +75,16 @@ export const ErrText = styled.p`
 export const Button = styled.button`
   font-size: ${FONT_SIZE.sm};
   color: ${COLOR.white};
-  background-color: ${COLOR.blue};
-  border: none;
+  background: transparent;
+  border: 1px solid ${COLOR.lightWhite};
   padding: 8px;
+  opacity: 0.5;
+  cursor: pointer;
+  outline-color: transparent;
+
+  &:hover {
+    opacity: 1;
+  }
 
   @media (min-width: ${DEVICE_WIDTH.tablet}) {
     font-size: ${FONT_SIZE.md};
