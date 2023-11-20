@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/server.js",
-    "dev": "npx tsc -w & nodemon dist/server.js"
+    "dev": "npx tsc -w & nodemon dist/server.js",
+    "vercel-build": "echo Hello"
   },
   "keywords": [],
   "author": "",
