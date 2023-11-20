@@ -4,10 +4,11 @@ import { DelValidationSchemaType } from "@utils/CUDValidationSchema";
 
 export default async function deleteData(data: DelValidationSchemaType) {
   try {
-    const resData = await axios.delete(`http://localhost:80/${data.date}`);
+    const resData = await axios.delete(`${process.env.URL}/${data.date}`);
 
     return resData.status === 200;
   } catch (err) {
     console.log(err);
   }
 }
+process.env.URL;
