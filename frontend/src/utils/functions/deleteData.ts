@@ -11,4 +11,3 @@ export default async function deleteData(data: DelValidationSchemaType) {
     console.log(err);
   }
 }
-process.env.URL;
