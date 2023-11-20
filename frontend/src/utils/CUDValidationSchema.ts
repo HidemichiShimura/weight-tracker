@@ -1,4 +1,4 @@
-import { map, z } from "zod";
+import { z } from "zod";
 
 const ERR_MSG = {
   weight: {
