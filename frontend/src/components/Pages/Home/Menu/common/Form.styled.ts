@@ -1,14 +1,20 @@
 import styled from "styled-components";
 
-import { DEVICE_WIDTH, FONT_SIZE } from "../../../../../utils/constants";
+import {
+  DEVICE_WIDTH,
+  FONT_SIZE,
+  BORDER_RADIUS,
+  PADDING,
+  COLOR,
+} from "../../../../Style/constant";
 
 export const Form = styled.form`
-  border-radius: var(--main-border-radius);
+  border-radius: ${BORDER_RADIUS.main};
   min-width: 300px;
-  padding: var(--inbtwn-elem-padding);
+  padding: ${PADDING.main};
   display: flex;
   flex-direction: column;
-  gap: var(--inbtwn-elem-padding);
+  gap: ${PADDING.main};
 `;
 export const InputContainer = styled.div`
   display: flex;
@@ -24,9 +30,9 @@ export const Label = styled.label`
 `;
 export const Input = styled.input`
   font-size: ${FONT_SIZE.sm};
-  color: var(--primary-white-color);
+  color: ${COLOR.white};
   padding: 8px;
-  border: 1px solid rgba(245, 245, 245, 0.2);
+  border: 1px solid ${COLOR.lightWhite};
   background: transparent;
   outline-color: transparent;
 
@@ -38,7 +44,7 @@ export const Input = styled.input`
   }
 `;
 export const ErrText = styled.p`
-  color: var(--primary-red-color);
+  color: ${COLOR.red};
   margin-top: 4px;
 
   @media (min-width: ${DEVICE_WIDTH.tablet}) {
@@ -50,10 +56,10 @@ export const ErrText = styled.p`
 `;
 export const Button = styled.button`
   font-size: ${FONT_SIZE.sm};
-  border: 1px solid rgba(245, 245, 245, 0.2);
+  border: 1px solid ${COLOR.lightWhite};
   padding: 8px;
   background: transparent;
-  color: var(--primary-white-color);
+  color: ${COLOR.white};
   opacity: 0.5;
   cursor: pointer;
 
