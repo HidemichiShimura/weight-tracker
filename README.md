@@ -6,7 +6,12 @@
 
 This is a weight-tracking application built on the web platform. You can register, modify, delete, and get your weight data with date.
 
-## Getting Started
+## ⚠️ Note
+
+You can access the main page where you manipulate weight data at the path "/" and "/Home". The login/signup pages are accessible at the path "/Login" and "/SignUp" respectively, but the user auth feature is not implemented yet.
+The login/signup feature is coming to take effect soon!
+
+## Getting Started in the Local Environment
 
 ### 1. Frontend
 
