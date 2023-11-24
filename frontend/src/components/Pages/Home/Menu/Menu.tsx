@@ -14,7 +14,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 25px 50px;
+  padding: 25px;
 `;
 const ToggleContainer = styled.div`
   display: flex;

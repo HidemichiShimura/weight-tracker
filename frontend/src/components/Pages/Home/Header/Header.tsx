@@ -24,11 +24,27 @@ const StyledHeader = styled.header`
 `;
 
 const AppTitle = styled.p`
-  font-size: ${FONT_SIZE.xl};
+  font-size: ${FONT_SIZE.md};
+
+  @media (min-width: ${DEVICE_WIDTH.tablet}) {
+    font-size: ${FONT_SIZE.lg};
+  }
+
+  @media (min-width: ${DEVICE_WIDTH.laptop}) {
+    font-size: ${FONT_SIZE.xl};
+  }
 `;
 
 const LoginEmail = styled.p`
-  font-size: ${FONT_SIZE.xl};
+  font-size: ${FONT_SIZE.md};
+
+  @media (min-width: ${DEVICE_WIDTH.tablet}) {
+    font-size: ${FONT_SIZE.lg};
+  }
+
+  @media (min-width: ${DEVICE_WIDTH.laptop}) {
+    font-size: ${FONT_SIZE.xl};
+  }
 `;
 
 export default function Header() {
