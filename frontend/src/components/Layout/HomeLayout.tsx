@@ -10,18 +10,15 @@ const Container = styled.div`
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
 
   @media (min-width: ${DEVICE_WIDTH.tablet}) {
-    padding: 30px;
-    gap: 30px;
+    gap: 50px;
   }
 
   @media (min-width: ${DEVICE_WIDTH.laptop}) {
-    padding: 50px;
-    gap: 50px;
+    gap: 100px;
   }
 `;
 
