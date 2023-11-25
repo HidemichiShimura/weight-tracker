@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { IsDataUpdatedContext } from "../context/IsDataUpdatedProvider";
 
-export function useIsDataUpdated() {
+export default function useIsDataUpdated() {
   const context = useContext(IsDataUpdatedContext);
 
   if (context === null) {

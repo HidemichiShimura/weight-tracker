@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { BlurContainer, Toggle, WeightData, HistoryData } from "@components";
 import { Container, ToggleContainer } from "./DataDisplay.styled";
 import { getData } from "@utils/functions";
-import { useIsDataUpdated } from "../../../../hooks/useIsDataUpdated";
+import { useIsDataUpdated } from "@hooks";
 
 function getLatestData(dataList: Array<{ weight: number; date: Date }>) {
   let latestData = dataList[0] || {};

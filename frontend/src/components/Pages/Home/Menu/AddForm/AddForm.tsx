@@ -15,7 +15,7 @@ import {
 } from "@utils/CUDValidationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { postData } from "@utils/functions";
-import { useIsDataUpdated } from "../../../../../hooks/useIsDataUpdated";
+import { useIsDataUpdated } from "@hooks";
 
 export default function AddForm() {
   const { setIsDataUpdated } = useIsDataUpdated();

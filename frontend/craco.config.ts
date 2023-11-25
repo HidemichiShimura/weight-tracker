@@ -40,6 +40,8 @@ export default {
         __dirname,
         "./src/utils/functions/index.ts"
       ),
+      "@context": path.resolve(__dirname, "./src/context/index.ts"),
+      "@hooks": path.resolve(__dirname, "./src/hooks/index.ts"),
     },
     type: ["node"],
   },

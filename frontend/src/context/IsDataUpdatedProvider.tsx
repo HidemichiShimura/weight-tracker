@@ -7,11 +7,7 @@ export const IsDataUpdatedContext = createContext<IsDataUpdatedContextType>({
   setIsDataUpdated: () => {},
 });
 
-export const IsDataUpdatedProvider = ({
-  children,
-}: {
-  children: ReactNode;
-}) => {
+const IsDataUpdatedProvider = ({ children }: { children: ReactNode }) => {
   const [isDataUpdated, setIsDataUpdated] = useState(false);
   const contextValue: IsDataUpdatedContextType = {
     isDataUpdated: isDataUpdated,
@@ -24,3 +20,5 @@ export const IsDataUpdatedProvider = ({
     </IsDataUpdatedContext.Provider>
   );
 };
+
+export default IsDataUpdatedProvider;

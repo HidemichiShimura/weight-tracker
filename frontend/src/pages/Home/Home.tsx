@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { HomeLayout, Header, DataDisplay, Menu } from "../../components/index";
-import { IsDataUpdatedProvider } from "../../context/IsDataUpdatedProvider";
+import { HomeLayout, Header, DataDisplay, Menu } from "@components";
+import { IsDataUpdatedProvider } from "@context";
 
 import { COLOR } from "../../components/Style/constant";
 
