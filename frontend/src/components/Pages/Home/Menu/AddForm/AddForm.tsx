@@ -15,8 +15,10 @@ import {
 } from "@utils/CUDValidationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { postData } from "@utils/functions";
+import { useIsDataUpdated } from "@hooks";
 
 export default function AddForm() {
+  const { setIsDataUpdated } = useIsDataUpdated();
   const {
     register,
     handleSubmit,
@@ -25,7 +27,6 @@ export default function AddForm() {
     mode: "onChange",
     resolver: zodResolver(AddValidationSchema),
   });
-
   const onSubmit = async (data: AddValidationSchemaType) => {
     try {
       const isAddSucceeded = await postData(data);
@@ -34,6 +35,7 @@ export default function AddForm() {
         : "Data registration failed!";
 
       console.log(msg);
+      setIsDataUpdated(true);
     } catch (err) {
       console.log(err);
     }

@@ -15,8 +15,10 @@ import {
 } from "@utils/CUDValidationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { deleteData } from "@utils/functions";
+import { useIsDataUpdated } from "@hooks";
 
 export default function DelForm() {
+  const { setIsDataUpdated } = useIsDataUpdated();
   const {
     register,
     handleSubmit,
@@ -35,6 +37,7 @@ export default function DelForm() {
         : "Data deletion succeeded!";
 
       console.log(msg);
+      setIsDataUpdated(true);
     } catch (err) {
       console.log(err);
     }

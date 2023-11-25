@@ -19,7 +19,9 @@
       "@components": ["./src/components/index.ts"],
       "@pages": ["./src/Pages/index.ts"],
       "@utils/*": ["./src/utils/*"],
-      "@utils/functions": ["./src/utils/functions/index.ts"]
+      "@utils/functions": ["./src/utils/functions/index.ts"],
+      "@context": ["./src/context/index.ts"],
+      "@hooks": ["./src/hooks/index.ts"]
     }
   },
   "include": ["src"]
