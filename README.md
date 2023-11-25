@@ -6,7 +6,21 @@
 
 This is a weight-tracking application built on the web platform. You can register, modify, delete, and get your weight data with date.
 
-## ⚠️ Note
+## Features
+
+### Current
+⚠️ These current features are available as a guest, the features login/signup and user data are being implemented soon
+- Read the latest weight data registered in the database
+- Read all the weight data registered in the database as history
+- Add new weight data with a date
+- Modify existing weight data by selecting a date
+- Delete existing weight data by selecting a date
+
+### More to Come
+- Login/signup
+- Manipulations of user data
+
+## Note
 
 You can access the main page where you manipulate weight data at the path "/" and "/Home". The login/signup pages are accessible at the path "/Login" and "/SignUp" respectively, but the user auth feature is not implemented yet.
 The login/signup feature is coming to take effect soon!
