@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { BlurContainer, Toggle, WeightData, HistoryData } from "@components";
 import { Container, ToggleContainer } from "./DataDisplay.styled";
 import { getData } from "@utils/functions";
+import { useIsDataUpdated } from "../../../../hooks/useIsDataUpdated";
 
 function getLatestData(dataList: Array<{ weight: number; date: Date }>) {
   let latestData = dataList[0] || {};
@@ -20,6 +21,7 @@ export default function DataDisplay() {
   const [selected, setSelected] = useState("latest");
   const [latestData, setLatestData] = useState<any>({});
   const [allData, setAllData] = useState<any>([{}]);
+  const { isDataUpdated, setIsDataUpdated } = useIsDataUpdated();
 
   useEffect(() => {
     const res = getData();
@@ -30,8 +32,9 @@ export default function DataDisplay() {
 
       setLatestData(latestD);
       setAllData(allD);
+      setIsDataUpdated(false);
     });
-  }, []);
+  }, [isDataUpdated]);
 
   return (
     <BlurContainer>

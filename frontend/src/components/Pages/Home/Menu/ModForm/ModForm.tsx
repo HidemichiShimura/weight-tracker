@@ -15,8 +15,10 @@ import {
 } from "@utils/CUDValidationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { patchData } from "@utils/functions";
+import { useIsDataUpdated } from "../../../../../hooks/useIsDataUpdated";
 
 export default function ModForm() {
+  const { setIsDataUpdated } = useIsDataUpdated();
   const {
     register,
     handleSubmit,
@@ -35,6 +37,7 @@ export default function ModForm() {
         : "Data update failed!";
 
       console.log(msg);
+      setIsDataUpdated(true);
     } catch (err) {
       console.log(err);
     }
